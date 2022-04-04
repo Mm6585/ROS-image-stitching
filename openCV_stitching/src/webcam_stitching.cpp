@@ -3,13 +3,11 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "ImageStitcher", ros::init_options::AnonymousName);
+  ros::init(argc, argv, "webcam_stitching");
   
   ros::NodeHandle nh_("~");
 
-  while(true) {
-  	ImageStitcher ic("camera1/image", "camera2/image", 10, true);
-  	// pub = "/stitched_images/output"
-  	ros::spinOnce();
-  }
+  ImageStitcher ic("camera1/image", "camera2/image", 10, true);
+  // pub = "/stitched_images/output"
+  ros::spin();
 }
