@@ -9,5 +9,8 @@ int main(int argc, char **argv)
 
   ImageStitcher ic("camera1/image", "camera2/image", 10, true);
   // pub = "/stitched_images/output"
+
+  ros::Rate loop_rate(1);
   ros::spin();
+  //loop_rate.sleep();
 }
